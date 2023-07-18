@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Inventory_App.Resources.ProductResource>
+
+@{
+    ViewBag.Title = "SalesReport";
+}
+
+<div class="page-header">
+    <div class="page-title">
+        <h4>Sales Report</h4>
+        <h6>Manage your Sales Report</h6>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="table-top">
+            
+            <div class="wordset">
+                <ul>
+                    <li>
+                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf"><img src="~/Content/icons/pdf.svg" alt="img"></a>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img src="~/Content/icons/excel.svg" alt="img"></a>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="print"><img src="~/Content/icons/printer.svg" alt="img"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+       
+        <div class="table-responsive">
+            <table class="table datanew">
+                <thead>
+                    <tr>
+                        <th>
+                            <label class="checkboxs">
+                                <input type="checkbox" id="select-all">
+                                <span class="checkmarks"></span>
+                            </label>
+                        </th>
+                        <th>Product Name</th>
+                        <th>SKU</th>
+                        <th> Category</th>
+                        <th>Brand</th>
+                        <th>Sold amount(₦)</th>
+                        <th>Sold qty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <label class="checkboxs">
+                                    <input type="checkbox">
+                                    <span class="checkmarks"></span>
+                                </label>
+                            </td>
+
+                            <td>  @Html.DisplayFor(modelitem => item.Name) </td>
+                            @if (item.StockKeepingUnit == null)
+                            {
+                                <td>None</td>
+                            }
+                            else
+                            {
+                                <td> @Html.DisplayFor(modelitem => item.StockKeepingUnit)</td>
+                            }
+
+                            <td> @Html.DisplayFor(modelitem => item.Category.Name)</td>
+
+                            <td>  @Html.DisplayFor(modelitem => item.Brand.Name)</td>
+
+                            <td>  @Html.DisplayFor(modelitem => item.SoldAmount)</td>
+
+                            <td>  @Html.DisplayFor(modelitem => item.SoldQuantity)</td>
+
+                        </tr>
+                    }
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,86 @@
+﻿@model Inventory_App.Models.Login
+@{
+    ViewBag.Title = "login";
+    Layout = "../Shared/_LayoutAuth.cshtml";
+
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="main-wrapper">
+        <div class="account-content">
+            <div class="login-wrapper">
+                <div class="login-content">
+                    <div class="login-userset">
+                        <div class="login-logo">
+                            <img src="~/Content/img/mylogo.png" alt="img">
+                        </div>
+                        <div class="login-userheading">
+                            <h3>Sign In</h3>
+                            <h4>Please login to your account</h4>
+                        </div>
+
+                        <div class="form-login">
+                            <label>Email</label>
+                            <div class="form-addons">
+                                @Html.EditorFor(c => c.Email)
+                                <img src="~/Content/icons/mail.svg" alt="img">
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+
+                        <div class="form-login">
+                            <label>Password</label>
+                            <div class="pass-group">
+                                <input type="password" class="pass-input" name="Password" placeholder="Enter your password" />
+
+                                <span class="fas toggle-password fa-eye-slash"></span>
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger",@style="font-weight:bolder" })
+
+                        <div class="form-login">
+                            <div class="alreadyuser">
+                                <h4><a href="@Url.Action("Forgotpswd", "Authentication")" class="hover-a">Forgot Password?</a></h4>
+                            </div>
+                        </div>
+                        <div class="form-login">
+                            <input type="submit" value="Sign In" class="btn btn-login" />
+
+                        </div>
+                        <div class="signinform text-center">
+                            <h4>Don’t have an account? <a href="@Url.Action("signup", "Authentication")" class="hover-a">Sign Up</a></h4>
+                        </div>
+                        <div class="form-setlogin">
+                            <h4>Or sign up with</h4>
+                        </div>
+                        <div class="form-sociallink">
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <img src="~/Content/icons/google.png" class="me-2" alt="google">
+                                        Sign Up using Google
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <img src="~/Content/icons/facebook.png" class="me-2" alt="google">
+                                        Sign Up using Facebook
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="login-img">
+                    <img src="~/Content/img/login.jpg" alt="img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+}

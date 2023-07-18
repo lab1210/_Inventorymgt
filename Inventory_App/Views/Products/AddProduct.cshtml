@@ -1,0 +1,121 @@
+﻿@model Inventory_App.Resources.ProductResource
+
+@{
+    ViewBag.Title = "AddProduct";
+}
+@using (Html.BeginForm("AddProduct", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="page-header">
+        <div class="page-title">
+            <h4>Product Add</h4>
+            <h6>Create new product</h6>
+            <div style="display:flex">
+                <sup style="color:red; font-weight:bold">*</sup>
+                <h6> : Required</h6>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="form-group">
+                        <div style="display:flex">
+                            <label>Product Name</label>
+                            <sup style="color:red; font-weight:bold">*</sup>
+                        </div>
+                        @Html.EditorFor(model => model.Name)
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="form-group">
+                        <div style="display:flex">
+
+                            <label>Category</label>
+                            <sup style="color:red; font-weight:bold">*</sup>
+                        </div>
+                        @Html.DropDownListFor(model => model.CategoryID, ViewBag.CategoryList as SelectList, "Select a Category", new { @class = "form - control" })
+                        @Html.ValidationMessageFor(model => model.CategoryID, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="form-group">
+                        <div style="display:flex">
+
+                            <label>Brand</label>
+                            <sup style="color:red; font-weight:bold">*</sup>
+                        </div>
+                        @Html.DropDownListFor(model => model.BrandID, ViewBag.BrandList as SelectList, "Select a Brand", new { @class = "form - control" })
+                        @Html.ValidationMessageFor(model => model.BrandID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="form-group">
+                        <div style="display:flex">
+
+                            <label>Unit</label>
+                            <sup style="color:red; font-weight:bold">*</sup>
+                        </div>
+                        @Html.DropDownListFor(model => model.UnitID, ViewBag.UnitList as SelectList, "Select a Unit", new { @class = "form - control" })
+                        @Html.ValidationMessageFor(model => model.UnitID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label>SKU</label>
+                        @Html.EditorFor(model => model.StockKeepingUnit)
+                        @Html.ValidationMessageFor(model => model.StockKeepingUnit, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="form-group">
+                        <div style="display:flex">
+
+                            <label>Price(₦)</label>
+                            <sup style="color:red; font-weight:bold">*</sup>
+                        </div>
+                        @Html.EditorFor(model => model.Price)
+                        @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <div style="display:flex">
+
+                            <label>Product Image</label>
+                        </div>
+
+                        <div class="image-upload">
+
+                            @Html.TextBoxFor(m => m.Image, new { type = "file" })
+                            <div class="image-uploads">
+                                <img src="~/Content/icons/upload.svg" alt="img">
+                                <h4>Drag and drop a file to upload</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <input type="submit" value="Submit" class="btn btn-submit me-2">
+
+                    <a href="@Url.Action("ProductList", "Products")" class="btn btn-cancel">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

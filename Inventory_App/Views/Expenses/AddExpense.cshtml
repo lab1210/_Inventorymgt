@@ -1,0 +1,62 @@
+﻿@model Inventory_App.Models.Expense
+
+@{
+    ViewBag.Title = "AddExpense";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="page-header">
+        <div class="page-title">
+            <h4>Expense Add</h4>
+            <h6>Add/Update Expenses</h6>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="form-group">
+                        <label>Expense for</label>
+                        @Html.EditorFor(model => model.Name)
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label>Expense Date </label>
+                        <div class="input-groupicon">
+                            @Html.EditorFor(model => model.Date)
+                            @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label>Amount(₦)</label>
+                        @Html.EditorFor(model => model.Amount)
+                        @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Description</label>
+                        @Html.TextAreaFor(model => model.description, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+
+
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <input type="submit" value="Submit" class="btn btn-submit me-2">
+                    <a href="@Url.Action("ExpenseList", "Expenses")" class="btn btn-cancel">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,227 @@
+﻿<!--@model Inventory_App.Models.Sale
+
+@{
+    ViewBag.Title = "NewSales";
+
+}
+
+@using (Html.BeginForm())
+{
+
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-lg-6 col-sm-12 tabs_wrapper">
+            <div class="page-header ">
+                <div class="page-title">
+                    <h4>Categories</h4>
+                    <h6>Manage your sales</h6>
+                </div>
+            </div>
+            <ul style="display: flex; flex-wrap: wrap; gap:10px">
+
+
+                @foreach (var category in ViewBag.category)
+                {
+
+                    <li>
+
+                        <div class="product-details ">
+
+                            <a href="@Url.Action("GetProductsByCategory", "Sales", new { categoryID = category.Id })">
+                                <img src="@category.ImagePath" alt="img" style="max-width:120px;max-height:150px">
+                            </a>
+                            <h6>@category.Name</h6>
+                        </div>
+                    </li>
+                    <li></li>
+
+
+
+                }
+
+            </ul>
+            <br />
+            <br />
+
+            <div class="tabs_container">
+                <div class="tab_content active" data-tab="fruits">
+                    @if (ViewBag.Products != null)
+                    {
+
+
+                        <div class="row ">
+
+                            @foreach (var product in ViewBag.Products)
+                            {
+
+                                <div class="col-lg-3 col-sm-6 d-flex ">
+                                    <div class="productset flex-fill active">
+
+                                        <div class="productsetimg">-->
+                                          @*  @if (product.InStockQuantity == 0)
+                                            {
+
+                                                <img src="@product.ImagePath" alt="img" style="max-width:100px;max-height:100px">
+
+                                            }
+                                            else
+                                            {
+                                                <a href="@Url.Action("AddToOrderList", "Sales", new { ProductID = product.ID})">
+
+                                                    <img src="@product.ImagePath" alt="img" style="max-width:100px;max-height:100px">
+                                                </a>
+                                            }
+                                            @if (product.InStockQuantity == 0)
+                                            {
+                                                <h6 style="font-weight:bolder">Out of Stock</h6>
+
+                                            }
+                                            else
+                                            {
+                                                <h6 style="font-weight:bolder">Quantity In Stock:@product.InStockQuantity</h6>
+                                            }
+*@
+                                        <!--</div>
+                                        <div class="productsetcontent">
+                                            <h4>@product.Name</h4>
+                                            <h6>@product.Price</h6>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            }
+
+
+
+                        </div>
+                    }
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="col-lg-6 col-sm-12">
+            <div class="order-list">
+                <div class="orderid">
+                    <h3>Order List  </h3>
+                    <h4 style="color:red">Date:@DateTime.Now</h4>
+                </div>
+
+
+            </div>
+            <div class="card card-order">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="@Url.Action("AddCustomer", "Peoples")" class="btn btn-adds" data-bs-toggle="modal" data-bs-target="#create"><i class="fa fa-plus me-2"></i>Add Customer</a>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="select-split ">
+                                <div class="select-group w-100">
+                                    @Html.DropDownList("CustomerID", new SelectList(ViewBag.customer, "id", "name"), "Select Customer", new { @class = "form-control" })
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="split-card">
+                </div>
+
+                @if (ViewBag.SelectedProducts != null)
+                {
+
+                    <div class="card-body pt-0">
+                        <div class="totalitem">
+                            <h4>Total items : @ViewBag.SelectedProducts.Count</h4>
+                            <a href="javascript:void(0);">Clear all</a>
+                        </div>
+                        @for (int i = 0; i < ViewBag.SelectedProducts.Count; i++)
+                        {
+
+
+                            var product = ViewBag.SelectedProducts[i];
+                            <div class="product-table">
+                                <ul class="product-lists">
+                                    <li>
+                                        <div class="productimg">
+                                            <div class="productimgs">
+                                                <img src=@product.Image alt="img">
+                                            </div>
+                                            <div class="productcontet">
+
+                                                <h4>
+                                                    @product.Name
+                                                </h4>
+
+                                                <div class="increment-decrement">
+                                                    <div class="input-groups">-->
+                                                        @*Quantity*@
+                                                    <!--</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>@product.Price	</li>
+                                    <li><a href="@Url.Action("DeleteProductFromOrderList", "Sales", new {product.ID})"onclick="return confirm('Are you sure you want to delete this?');"><img src="~/Content/icons/delete-2.svg" alt="img"></a></li>
+                                    <li>
+                                        <a class="me-3" href="@Url.Action()">
+                                            <img src="~/Content/icons/plus.svg" alt="img">
+                                        </a>
+                                    </li>
+                                </ul>
+
+
+
+                            </div>
+                        }
+                    </div>
+                    <div class="split-card">
+
+                    </div>
+                    <div class="card-body pt-0 pb-2">
+
+                        <input type="submit" value="Submit" class="btn btn-submit me-2">
+
+
+                        <div class="setvalue">
+                            <ul>
+
+                                <li class="total-value">
+                                    <h5>Total</h5>
+
+                                    <h6>@Html.DisplayFor(c => c.Total)</h6>
+
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="btn-totallabel">
+                            <h5>Checkout</h5>
+                            <h6>@Html.DisplayFor(c => c.Total)</h6>
+
+                        </div>
+                        <div class="btn-pos">
+                            <ul>
+
+                                <li>
+                                    <a class="btn" data-bs-toggle="modal" data-bs-target="#recents" href="@Url.Action("SalesDetails", "Sales")"><img src="~/Content/icons/transcation.svg" alt="img" class="me-1"> Transaction</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>}-->

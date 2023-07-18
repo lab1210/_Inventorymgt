@@ -1,0 +1,25 @@
+﻿
+<div class="header-left active">
+    <a href="@Url.Action("Index","DashBoard")" class="logo">
+        <img src="~/Content/img/mylogo.png" alt="">
+    </a>
+
+
+    <a id="toggle_btn" href="javascript:void(0);">
+    </a>
+    <div style="display:flex; padding-left:1000px">
+        
+        <img src="~/Content/icons/users1.svg" alt="img">
+            <h6> @ViewBag.LoggedInUserName</h6>
+    </div>
+</div>
+<a id="mobile_btn" class="mobile_btn" href="#sidebar">
+    <span class="bar-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </span>
+</a>
+
+
+

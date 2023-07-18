@@ -1,0 +1,1243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{47D098A7-900D-43B8-953A-697956E082F1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inventory_App</RootNamespace>
+    <AssemblyName>Inventory_App</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44311</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\DashBoardController.cs" />
+    <Compile Include="Controllers\ExpensesController.cs" />
+    <Compile Include="Controllers\PeoplesController.cs" />
+    <Compile Include="Controllers\PlacesController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\PurchasesController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\SalesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="IServices\IBrandService.cs" />
+    <Compile Include="IServices\ICategoryService.cs" />
+    <Compile Include="IServices\IExpenseService.cs" />
+    <Compile Include="IServices\ILoginService.cs" />
+    <Compile Include="IServices\IProductService.cs" />
+    <Compile Include="IServices\IPeopleService.cs" />
+    <Compile Include="IServices\IPlaceService.cs" />
+    <Compile Include="IServices\IPurchaseService.cs" />
+    <Compile Include="IServices\IRegisterService.cs" />
+    <Compile Include="IServices\ISaleService.cs" />
+    <Compile Include="IServices\IUnitService.cs" />
+    <Compile Include="Migrations\202306081629400_Brand.cs" />
+    <Compile Include="Migrations\202306081629400_Brand.designer.cs">
+      <DependentUpon>202306081629400_Brand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306081802439_Country.cs" />
+    <Compile Include="Migrations\202306081802439_Country.designer.cs">
+      <DependentUpon>202306081802439_Country.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306081818480_City.cs" />
+    <Compile Include="Migrations\202306081818480_City.designer.cs">
+      <DependentUpon>202306081818480_City.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306081830064_Customer.cs" />
+    <Compile Include="Migrations\202306081830064_Customer.designer.cs">
+      <DependentUpon>202306081830064_Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306081845400_Supplier.cs" />
+    <Compile Include="Migrations\202306081845400_Supplier.designer.cs">
+      <DependentUpon>202306081845400_Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306081900441_Supplier4.cs" />
+    <Compile Include="Migrations\202306081900441_Supplier4.designer.cs">
+      <DependentUpon>202306081900441_Supplier4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306081901285_Supplier5.cs" />
+    <Compile Include="Migrations\202306081901285_Supplier5.designer.cs">
+      <DependentUpon>202306081901285_Supplier5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306081932205_Expense.cs" />
+    <Compile Include="Migrations\202306081932205_Expense.designer.cs">
+      <DependentUpon>202306081932205_Expense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306081947341_Unit.cs" />
+    <Compile Include="Migrations\202306081947341_Unit.designer.cs">
+      <DependentUpon>202306081947341_Unit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306082024259_Purchase.cs" />
+    <Compile Include="Migrations\202306082024259_Purchase.designer.cs">
+      <DependentUpon>202306082024259_Purchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306082137176_Customer1.cs" />
+    <Compile Include="Migrations\202306082137176_Customer1.designer.cs">
+      <DependentUpon>202306082137176_Customer1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306082343503_Purchase1.cs" />
+    <Compile Include="Migrations\202306082343503_Purchase1.designer.cs">
+      <DependentUpon>202306082343503_Purchase1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306090016515_Purchase2.cs" />
+    <Compile Include="Migrations\202306090016515_Purchase2.designer.cs">
+      <DependentUpon>202306090016515_Purchase2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306131424355_InventoryReport1.cs" />
+    <Compile Include="Migrations\202306131424355_InventoryReport1.designer.cs">
+      <DependentUpon>202306131424355_InventoryReport1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306131430429_InventoryReport2.cs" />
+    <Compile Include="Migrations\202306131430429_InventoryReport2.designer.cs">
+      <DependentUpon>202306131430429_InventoryReport2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306131433212_InventoryReport3.cs" />
+    <Compile Include="Migrations\202306131433212_InventoryReport3.designer.cs">
+      <DependentUpon>202306131433212_InventoryReport3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306131441501_PurchaseReport.cs" />
+    <Compile Include="Migrations\202306131441501_PurchaseReport.designer.cs">
+      <DependentUpon>202306131441501_PurchaseReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306131447565_SaleReport.cs" />
+    <Compile Include="Migrations\202306131447565_SaleReport.designer.cs">
+      <DependentUpon>202306131447565_SaleReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306131450273_SaleReport1.cs" />
+    <Compile Include="Migrations\202306131450273_SaleReport1.designer.cs">
+      <DependentUpon>202306131450273_SaleReport1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306131453018_SaleReport2.cs" />
+    <Compile Include="Migrations\202306131453018_SaleReport2.designer.cs">
+      <DependentUpon>202306131453018_SaleReport2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306131454409_InventoryReport4.cs" />
+    <Compile Include="Migrations\202306131454409_InventoryReport4.designer.cs">
+      <DependentUpon>202306131454409_InventoryReport4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306141208363_salesUpdate.cs" />
+    <Compile Include="Migrations\202306141208363_salesUpdate.designer.cs">
+      <DependentUpon>202306141208363_salesUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306141415322_salesUpdate1.cs" />
+    <Compile Include="Migrations\202306141415322_salesUpdate1.designer.cs">
+      <DependentUpon>202306141415322_salesUpdate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306141417157_salesUpdate2.cs" />
+    <Compile Include="Migrations\202306141417157_salesUpdate2.designer.cs">
+      <DependentUpon>202306141417157_salesUpdate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306142045128_unit added to sale.cs" />
+    <Compile Include="Migrations\202306142045128_unit added to sale.designer.cs">
+      <DependentUpon>202306142045128_unit added to sale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306142105212_finalsaleupdate.cs" />
+    <Compile Include="Migrations\202306142105212_finalsaleupdate.designer.cs">
+      <DependentUpon>202306142105212_finalsaleupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306142157089_removeinventoryreportmodel.cs" />
+    <Compile Include="Migrations\202306142157089_removeinventoryreportmodel.designer.cs">
+      <DependentUpon>202306142157089_removeinventoryreportmodel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306142216453_updateproduct.cs" />
+    <Compile Include="Migrations\202306142216453_updateproduct.designer.cs">
+      <DependentUpon>202306142216453_updateproduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306142251225_finalupdateproduct.cs" />
+    <Compile Include="Migrations\202306142251225_finalupdateproduct.designer.cs">
+      <DependentUpon>202306142251225_finalupdateproduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306142310380_image added to product.cs" />
+    <Compile Include="Migrations\202306142310380_image added to product.designer.cs">
+      <DependentUpon>202306142310380_image added to product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306151048288_Image removed.cs" />
+    <Compile Include="Migrations\202306151048288_Image removed.designer.cs">
+      <DependentUpon>202306151048288_Image removed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306151053321_Image added to product model.cs" />
+    <Compile Include="Migrations\202306151053321_Image added to product model.designer.cs">
+      <DependentUpon>202306151053321_Image added to product model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306191108462_Image added to category.cs" />
+    <Compile Include="Migrations\202306191108462_Image added to category.designer.cs">
+      <DependentUpon>202306191108462_Image added to category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306191130299_Imagepath added to category.cs" />
+    <Compile Include="Migrations\202306191130299_Imagepath added to category.designer.cs">
+      <DependentUpon>202306191130299_Imagepath added to category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306191239599_productbrand.cs" />
+    <Compile Include="Migrations\202306191239599_productbrand.designer.cs">
+      <DependentUpon>202306191239599_productbrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306191412575_deletesale.cs" />
+    <Compile Include="Migrations\202306191412575_deletesale.designer.cs">
+      <DependentUpon>202306191412575_deletesale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306201111390_Delete report.cs" />
+    <Compile Include="Migrations\202306201111390_Delete report.designer.cs">
+      <DependentUpon>202306201111390_Delete report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306201158135_Sales Model.cs" />
+    <Compile Include="Migrations\202306201158135_Sales Model.designer.cs">
+      <DependentUpon>202306201158135_Sales Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306201912398_NewSales Model .cs" />
+    <Compile Include="Migrations\202306201912398_NewSales Model .designer.cs">
+      <DependentUpon>202306201912398_NewSales Model .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306201915154_NewSales Model2 .cs" />
+    <Compile Include="Migrations\202306201915154_NewSales Model2 .designer.cs">
+      <DependentUpon>202306201915154_NewSales Model2 .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306211209189_remove soldproduct.cs" />
+    <Compile Include="Migrations\202306211209189_remove soldproduct.designer.cs">
+      <DependentUpon>202306211209189_remove soldproduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306211425344_change sales2.cs" />
+    <Compile Include="Migrations\202306211425344_change sales2.designer.cs">
+      <DependentUpon>202306211425344_change sales2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306212223002_remove quantity.cs" />
+    <Compile Include="Migrations\202306212223002_remove quantity.designer.cs">
+      <DependentUpon>202306212223002_remove quantity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306212310114_remove quantity1.cs" />
+    <Compile Include="Migrations\202306212310114_remove quantity1.designer.cs">
+      <DependentUpon>202306212310114_remove quantity1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306212351503_add quantity.cs" />
+    <Compile Include="Migrations\202306212351503_add quantity.designer.cs">
+      <DependentUpon>202306212351503_add quantity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306220929504_Productupdate.cs" />
+    <Compile Include="Migrations\202306220929504_Productupdate.designer.cs">
+      <DependentUpon>202306220929504_Productupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306220934052_PurchaseReport1.cs" />
+    <Compile Include="Migrations\202306220934052_PurchaseReport1.designer.cs">
+      <DependentUpon>202306220934052_PurchaseReport1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306220957277_remove PurchaseReport.cs" />
+    <Compile Include="Migrations\202306220957277_remove PurchaseReport.designer.cs">
+      <DependentUpon>202306220957277_remove PurchaseReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306221008272_InventoryReports.cs" />
+    <Compile Include="Migrations\202306221008272_InventoryReports.designer.cs">
+      <DependentUpon>202306221008272_InventoryReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306221041542_remove InventoryReports.cs" />
+    <Compile Include="Migrations\202306221041542_remove InventoryReports.designer.cs">
+      <DependentUpon>202306221041542_remove InventoryReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306221051199_Productupdate2.cs" />
+    <Compile Include="Migrations\202306221051199_Productupdate2.designer.cs">
+      <DependentUpon>202306221051199_Productupdate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306261019598_updatesale.cs" />
+    <Compile Include="Migrations\202306261019598_updatesale.designer.cs">
+      <DependentUpon>202306261019598_updatesale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307131544324_sale-updated.cs" />
+    <Compile Include="Migrations\202307131544324_sale-updated.designer.cs">
+      <DependentUpon>202307131544324_sale-updated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307140710081_remove quantity from selected products.cs" />
+    <Compile Include="Migrations\202307140710081_remove quantity from selected products.designer.cs">
+      <DependentUpon>202307140710081_remove quantity from selected products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307140711437_remove pickeditems from selected products.cs" />
+    <Compile Include="Migrations\202307140711437_remove pickeditems from selected products.designer.cs">
+      <DependentUpon>202307140711437_remove pickeditems from selected products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307140848264_Change Sales.cs" />
+    <Compile Include="Migrations\202307140848264_Change Sales.designer.cs">
+      <DependentUpon>202307140848264_Change Sales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307141111308_remove purchased quantity from product.cs" />
+    <Compile Include="Migrations\202307141111308_remove purchased quantity from product.designer.cs">
+      <DependentUpon>202307141111308_remove purchased quantity from product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307141121533_Product Report Model.cs" />
+    <Compile Include="Migrations\202307141121533_Product Report Model.designer.cs">
+      <DependentUpon>202307141121533_Product Report Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307141224173_Product Report Model update.cs" />
+    <Compile Include="Migrations\202307141224173_Product Report Model update.designer.cs">
+      <DependentUpon>202307141224173_Product Report Model update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307141311093_update soldproducts.cs" />
+    <Compile Include="Migrations\202307141311093_update soldproducts.designer.cs">
+      <DependentUpon>202307141311093_update soldproducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307141313018_remove error from soldproducts.cs" />
+    <Compile Include="Migrations\202307141313018_remove error from soldproducts.designer.cs">
+      <DependentUpon>202307141313018_remove error from soldproducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307141335463_add stock to soldproducts.cs" />
+    <Compile Include="Migrations\202307141335463_add stock to soldproducts.designer.cs">
+      <DependentUpon>202307141335463_add stock to soldproducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307141635020_register.cs" />
+    <Compile Include="Migrations\202307141635020_register.designer.cs">
+      <DependentUpon>202307141635020_register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307141637572_login.cs" />
+    <Compile Include="Migrations\202307141637572_login.designer.cs">
+      <DependentUpon>202307141637572_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307141734166_Add date to login.cs" />
+    <Compile Include="Migrations\202307141734166_Add date to login.designer.cs">
+      <DependentUpon>202307141734166_Add date to login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307141828227_Add createdby.cs" />
+    <Compile Include="Migrations\202307141828227_Add createdby.designer.cs">
+      <DependentUpon>202307141828227_Add createdby.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307171456059_change amount in expense from int to decimal.cs" />
+    <Compile Include="Migrations\202307171456059_change amount in expense from int to decimal.designer.cs">
+      <DependentUpon>202307171456059_change amount in expense from int to decimal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AppsContext.cs" />
+    <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\City.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Expense.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Purchase.cs" />
+    <Compile Include="Models\Register.cs" />
+    <Compile Include="Models\Sale.cs" />
+    <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\Unit.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\CategoryResource.cs" />
+    <Compile Include="Resources\SalesResource.cs" />
+    <Compile Include="Resources\ProductResource.cs" />
+    <Compile Include="Resources\PurchaseResources.cs" />
+    <Compile Include="Services\BrandService.cs" />
+    <Compile Include="Services\CategoryService.cs" />
+    <Compile Include="Services\ExpenseService.cs" />
+    <Compile Include="Services\LoginService.cs" />
+    <Compile Include="Services\ProductService.cs" />
+    <Compile Include="Services\PeopleService.cs" />
+    <Compile Include="Services\PlaceService.cs" />
+    <Compile Include="Services\PurchaseService.cs" />
+    <Compile Include="Services\RegisterService.cs" />
+    <Compile Include="Services\SaleService.cs" />
+    <Compile Include="Services\UnitService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\animate.css" />
+    <Content Include="Content\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\icons\barcode1.png" />
+    <Content Include="Content\icons\calendars.svg" />
+    <Content Include="Content\icons\cash.svg" />
+    <Content Include="Content\icons\close-circle.svg" />
+    <Content Include="Content\icons\close-circle1.svg" />
+    <Content Include="Content\icons\closes.svg" />
+    <Content Include="Content\icons\dash1.svg" />
+    <Content Include="Content\icons\dash2.svg" />
+    <Content Include="Content\icons\dash3.svg" />
+    <Content Include="Content\icons\dash4.svg" />
+    <Content Include="Content\icons\dashboard.svg" />
+    <Content Include="Content\icons\datepicker.svg" />
+    <Content Include="Content\icons\debitcard.svg" />
+    <Content Include="Content\icons\delete-2.svg" />
+    <Content Include="Content\icons\delete.svg" />
+    <Content Include="Content\icons\delete1.svg" />
+    <Content Include="Content\icons\dollar-square.svg" />
+    <Content Include="Content\icons\dollar.svg" />
+    <Content Include="Content\icons\download.svg" />
+    <Content Include="Content\icons\dropdown.svg" />
+    <Content Include="Content\icons\edit-5.svg" />
+    <Content Include="Content\icons\edit-6.svg" />
+    <Content Include="Content\icons\edit-set.svg" />
+    <Content Include="Content\icons\edit.svg" />
+    <Content Include="Content\icons\ellipise1.svg" />
+    <Content Include="Content\icons\excel.svg" />
+    <Content Include="Content\icons\expense1.svg" />
+    <Content Include="Content\icons\eye.svg" />
+    <Content Include="Content\icons\eye1.svg" />
+    <Content Include="Content\icons\facebook.png" />
+    <Content Include="Content\icons\filter.svg" />
+    <Content Include="Content\icons\google.png" />
+    <Content Include="Content\icons\log-out.svg" />
+    <Content Include="Content\icons\macbook.svg" />
+    <Content Include="Content\icons\mail.svg" />
+    <Content Include="Content\icons\minus.svg" />
+    <Content Include="Content\icons\notification-bing.svg" />
+    <Content Include="Content\icons\pause1.svg" />
+    <Content Include="Content\icons\pdf.svg" />
+    <Content Include="Content\icons\places.svg" />
+    <Content Include="Content\icons\plus-circle.svg" />
+    <Content Include="Content\icons\plus.svg" />
+    <Content Include="Content\icons\plus1.svg" />
+    <Content Include="Content\icons\printer.svg" />
+    <Content Include="Content\icons\product.svg" />
+    <Content Include="Content\icons\purchase1.svg" />
+    <Content Include="Content\icons\quotation1.svg" />
+    <Content Include="Content\icons\return1.svg" />
+    <Content Include="Content\icons\reverse.svg" />
+    <Content Include="Content\icons\sales1.svg" />
+    <Content Include="Content\icons\scan.svg" />
+    <Content Include="Content\icons\scanner.svg" />
+    <Content Include="Content\icons\scanner1.svg" />
+    <Content Include="Content\icons\scanners.svg" />
+    <Content Include="Content\icons\search-white.svg" />
+    <Content Include="Content\icons\search-whites.svg" />
+    <Content Include="Content\icons\search.svg" />
+    <Content Include="Content\icons\settings.svg" />
+    <Content Include="Content\icons\time.svg" />
+    <Content Include="Content\icons\transcation.svg" />
+    <Content Include="Content\icons\transfer1.svg" />
+    <Content Include="Content\icons\trash12.svg" />
+    <Content Include="Content\icons\upload.svg" />
+    <Content Include="Content\icons\users1.svg" />
+    <Content Include="Content\icons\wallet1.svg" />
+    <Content Include="Content\img\barcode1.png" />
+    <Content Include="Content\img\favicon.png" />
+    <Content Include="Content\img\flags\de.png" />
+    <Content Include="Content\img\flags\es.png" />
+    <Content Include="Content\img\flags\fr.png" />
+    <Content Include="Content\img\flags\us.png" />
+    <Content Include="Content\img\flags\us1.png" />
+    <Content Include="Content\img\img-01.jpg" />
+    <Content Include="Content\img\img-02.jpg" />
+    <Content Include="Content\img\img-03.jpg" />
+    <Content Include="Content\img\img-04.jpg" />
+    <Content Include="Content\img\img-05.jpg" />
+    <Content Include="Content\img\login.jpg" />
+    <Content Include="Content\img\logo-small.png" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\logo3.png" />
+    <Content Include="Content\img\logso.png" />
+    <Content Include="Content\img\mylogo.png" />
+    <Content Include="Content\img\profiles\avatar-02.jpg" />
+    <Content Include="Content\img\profiles\avatar-03.jpg" />
+    <Content Include="Content\img\profiles\avatar-04.jpg" />
+    <Content Include="Content\img\profiles\avatar-06.jpg" />
+    <Content Include="Content\img\profiles\avatar-13.jpg" />
+    <Content Include="Content\img\profiles\avatar-17.jpg" />
+    <Content Include="Content\img\profiles\avator1.jpg" />
+    <Content Include="Content\plugins\alertify\alertify.min.css" />
+    <Content Include="Content\plugins\alertify\alertify.min.js" />
+    <Content Include="Content\plugins\alertify\custom-alertify.min.js" />
+    <Content Include="Content\plugins\apexchart\apexcharts.min.js" />
+    <Content Include="Content\plugins\apexchart\chart-data.js" />
+    <Content Include="Content\plugins\chartjs\chart-data.js" />
+    <Content Include="Content\plugins\chartjs\chart.min.js" />
+    <Content Include="Content\plugins\clipboard\clipboard.min.js" />
+    <Content Include="Content\plugins\countup\jquery.counterup.min.js" />
+    <Content Include="Content\plugins\countup\jquery.missofis-countdown.js" />
+    <Content Include="Content\plugins\countup\jquery.waypoints.min.js" />
+    <Content Include="Content\plugins\dragula\css\dragula.min.css" />
+    <Content Include="Content\plugins\dragula\js\drag-drop.min.js" />
+    <Content Include="Content\plugins\dragula\js\dragula.min.js" />
+    <Content Include="Content\plugins\fileupload\fileupload.min.js" />
+    <Content Include="Content\plugins\flot\chart-data.js" />
+    <Content Include="Content\plugins\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Content\plugins\flot\jquery.flot.js" />
+    <Content Include="Content\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Content\plugins\fontawesome\css\all.min.css" />
+    <Content Include="Content\plugins\fontawesome\css\fontawesome.min.css" />
+    <Content Include="Content\plugins\fontawesome\webfonts\fa-brands-400.svg" />
+    <Content Include="Content\plugins\fontawesome\webfonts\fa-regular-400.svg" />
+    <Content Include="Content\plugins\fontawesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\plugins\fullcalendar\fullcalendar.min.css" />
+    <Content Include="Content\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Content\plugins\fullcalendar\jquery.fullcalendar.js" />
+    <Content Include="Content\plugins\icons\feather\feather.css" />
+    <Content Include="Content\plugins\icons\flags\flags.css" />
+    <Content Include="Content\plugins\icons\flags\flags\ad.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ae.png" />
+    <Content Include="Content\plugins\icons\flags\flags\af.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ag.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ai.png" />
+    <Content Include="Content\plugins\icons\flags\flags\al.png" />
+    <Content Include="Content\plugins\icons\flags\flags\am.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ao.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ar.png" />
+    <Content Include="Content\plugins\icons\flags\flags\as.png" />
+    <Content Include="Content\plugins\icons\flags\flags\at.png" />
+    <Content Include="Content\plugins\icons\flags\flags\au.png" />
+    <Content Include="Content\plugins\icons\flags\flags\aw.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ax.png" />
+    <Content Include="Content\plugins\icons\flags\flags\az.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ba.png" />
+    <Content Include="Content\plugins\icons\flags\flags\bb.png" />
+    <Content Include="Content\plugins\icons\flags\flags\bd.png" />
+    <Content Include="Content\plugins\icons\flags\flags\be.png" />
+    <Content Include="Content\plugins\icons\flags\flags\bf.png" />
+    <Content Include="Content\plugins\icons\flags\flags\bg.png" />
+    <Content Include="Content\plugins\icons\flags\flags\bh.png" />
+    <Content Include="Content\plugins\icons\flags\flags\bi.png" />
+    <Content Include="Content\plugins\icons\flags\flags\bj.png" />
+    <Content Include="Content\plugins\icons\flags\flags\bl.png" />
+    <Content Include="Content\plugins\icons\flags\flags\bm.png" />
+    <Content Include="Content\plugins\icons\flags\flags\bn.png" />
+    <Content Include="Content\plugins\icons\flags\flags\bo.png" />
+    <Content Include="Content\plugins\icons\flags\flags\bq.png" />
+    <Content Include="Content\plugins\icons\flags\flags\br.png" />
+    <Content Include="Content\plugins\icons\flags\flags\bs.png" />
+    <Content Include="Content\plugins\icons\flags\flags\bt.png" />
+    <Content Include="Content\plugins\icons\flags\flags\bv.png" />
+    <Content Include="Content\plugins\icons\flags\flags\bw.png" />
+    <Content Include="Content\plugins\icons\flags\flags\by.png" />
+    <Content Include="Content\plugins\icons\flags\flags\bz.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ca.png" />
+    <Content Include="Content\plugins\icons\flags\flags\cc.png" />
+    <Content Include="Content\plugins\icons\flags\flags\cd.png" />
+    <Content Include="Content\plugins\icons\flags\flags\cf.png" />
+    <Content Include="Content\plugins\icons\flags\flags\cg.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ch.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ci.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ck.png" />
+    <Content Include="Content\plugins\icons\flags\flags\cl.png" />
+    <Content Include="Content\plugins\icons\flags\flags\cm.png" />
+    <Content Include="Content\plugins\icons\flags\flags\cn.png" />
+    <Content Include="Content\plugins\icons\flags\flags\co.png" />
+    <Content Include="Content\plugins\icons\flags\flags\cr.png" />
+    <Content Include="Content\plugins\icons\flags\flags\cu.png" />
+    <Content Include="Content\plugins\icons\flags\flags\cv.png" />
+    <Content Include="Content\plugins\icons\flags\flags\cw.png" />
+    <Content Include="Content\plugins\icons\flags\flags\cx.png" />
+    <Content Include="Content\plugins\icons\flags\flags\cy.png" />
+    <Content Include="Content\plugins\icons\flags\flags\cz.png" />
+    <Content Include="Content\plugins\icons\flags\flags\de.png" />
+    <Content Include="Content\plugins\icons\flags\flags\dj.png" />
+    <Content Include="Content\plugins\icons\flags\flags\dk.png" />
+    <Content Include="Content\plugins\icons\flags\flags\dm.png" />
+    <Content Include="Content\plugins\icons\flags\flags\do.png" />
+    <Content Include="Content\plugins\icons\flags\flags\dz.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ec.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ee.png" />
+    <Content Include="Content\plugins\icons\flags\flags\eg.png" />
+    <Content Include="Content\plugins\icons\flags\flags\er.png" />
+    <Content Include="Content\plugins\icons\flags\flags\es.png" />
+    <Content Include="Content\plugins\icons\flags\flags\et.png" />
+    <Content Include="Content\plugins\icons\flags\flags\fi.png" />
+    <Content Include="Content\plugins\icons\flags\flags\fj.png" />
+    <Content Include="Content\plugins\icons\flags\flags\fk.png" />
+    <Content Include="Content\plugins\icons\flags\flags\fm.png" />
+    <Content Include="Content\plugins\icons\flags\flags\fo.png" />
+    <Content Include="Content\plugins\icons\flags\flags\fr.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ga.png" />
+    <Content Include="Content\plugins\icons\flags\flags\gb.png" />
+    <Content Include="Content\plugins\icons\flags\flags\gd.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ge.png" />
+    <Content Include="Content\plugins\icons\flags\flags\gf.png" />
+    <Content Include="Content\plugins\icons\flags\flags\gg.png" />
+    <Content Include="Content\plugins\icons\flags\flags\gh.png" />
+    <Content Include="Content\plugins\icons\flags\flags\gi.png" />
+    <Content Include="Content\plugins\icons\flags\flags\gl.png" />
+    <Content Include="Content\plugins\icons\flags\flags\gm.png" />
+    <Content Include="Content\plugins\icons\flags\flags\gn.png" />
+    <Content Include="Content\plugins\icons\flags\flags\gp.png" />
+    <Content Include="Content\plugins\icons\flags\flags\gq.png" />
+    <Content Include="Content\plugins\icons\flags\flags\gr.png" />
+    <Content Include="Content\plugins\icons\flags\flags\gs.png" />
+    <Content Include="Content\plugins\icons\flags\flags\gt.png" />
+    <Content Include="Content\plugins\icons\flags\flags\gu.png" />
+    <Content Include="Content\plugins\icons\flags\flags\gw.png" />
+    <Content Include="Content\plugins\icons\flags\flags\gy.png" />
+    <Content Include="Content\plugins\icons\flags\flags\hk.png" />
+    <Content Include="Content\plugins\icons\flags\flags\hn.png" />
+    <Content Include="Content\plugins\icons\flags\flags\hr.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ht.png" />
+    <Content Include="Content\plugins\icons\flags\flags\hu.png" />
+    <Content Include="Content\plugins\icons\flags\flags\id.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ie.png" />
+    <Content Include="Content\plugins\icons\flags\flags\il.png" />
+    <Content Include="Content\plugins\icons\flags\flags\im.png" />
+    <Content Include="Content\plugins\icons\flags\flags\in.png" />
+    <Content Include="Content\plugins\icons\flags\flags\io.png" />
+    <Content Include="Content\plugins\icons\flags\flags\iq.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ir.png" />
+    <Content Include="Content\plugins\icons\flags\flags\is.png" />
+    <Content Include="Content\plugins\icons\flags\flags\it.png" />
+    <Content Include="Content\plugins\icons\flags\flags\je.png" />
+    <Content Include="Content\plugins\icons\flags\flags\jm.png" />
+    <Content Include="Content\plugins\icons\flags\flags\jo.png" />
+    <Content Include="Content\plugins\icons\flags\flags\jp.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ke.png" />
+    <Content Include="Content\plugins\icons\flags\flags\kg.png" />
+    <Content Include="Content\plugins\icons\flags\flags\kh.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ki.png" />
+    <Content Include="Content\plugins\icons\flags\flags\km.png" />
+    <Content Include="Content\plugins\icons\flags\flags\kn.png" />
+    <Content Include="Content\plugins\icons\flags\flags\kp.png" />
+    <Content Include="Content\plugins\icons\flags\flags\kr.png" />
+    <Content Include="Content\plugins\icons\flags\flags\kw.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ky.png" />
+    <Content Include="Content\plugins\icons\flags\flags\kz.png" />
+    <Content Include="Content\plugins\icons\flags\flags\la.png" />
+    <Content Include="Content\plugins\icons\flags\flags\lb.png" />
+    <Content Include="Content\plugins\icons\flags\flags\lc.png" />
+    <Content Include="Content\plugins\icons\flags\flags\li.png" />
+    <Content Include="Content\plugins\icons\flags\flags\lk.png" />
+    <Content Include="Content\plugins\icons\flags\flags\lr.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ls.png" />
+    <Content Include="Content\plugins\icons\flags\flags\lt.png" />
+    <Content Include="Content\plugins\icons\flags\flags\lu.png" />
+    <Content Include="Content\plugins\icons\flags\flags\lv.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ly.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ma.png" />
+    <Content Include="Content\plugins\icons\flags\flags\mc.png" />
+    <Content Include="Content\plugins\icons\flags\flags\md.png" />
+    <Content Include="Content\plugins\icons\flags\flags\me.png" />
+    <Content Include="Content\plugins\icons\flags\flags\mg.png" />
+    <Content Include="Content\plugins\icons\flags\flags\mh.png" />
+    <Content Include="Content\plugins\icons\flags\flags\mk.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ml.png" />
+    <Content Include="Content\plugins\icons\flags\flags\mm.png" />
+    <Content Include="Content\plugins\icons\flags\flags\mn.png" />
+    <Content Include="Content\plugins\icons\flags\flags\mo.png" />
+    <Content Include="Content\plugins\icons\flags\flags\mp.png" />
+    <Content Include="Content\plugins\icons\flags\flags\mq.png" />
+    <Content Include="Content\plugins\icons\flags\flags\mr.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ms.png" />
+    <Content Include="Content\plugins\icons\flags\flags\mt.png" />
+    <Content Include="Content\plugins\icons\flags\flags\mu.png" />
+    <Content Include="Content\plugins\icons\flags\flags\mv.png" />
+    <Content Include="Content\plugins\icons\flags\flags\mw.png" />
+    <Content Include="Content\plugins\icons\flags\flags\mx.png" />
+    <Content Include="Content\plugins\icons\flags\flags\my.png" />
+    <Content Include="Content\plugins\icons\flags\flags\mz.png" />
+    <Content Include="Content\plugins\icons\flags\flags\na.png" />
+    <Content Include="Content\plugins\icons\flags\flags\nc.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ne.png" />
+    <Content Include="Content\plugins\icons\flags\flags\nf.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ng.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ni.png" />
+    <Content Include="Content\plugins\icons\flags\flags\nl.png" />
+    <Content Include="Content\plugins\icons\flags\flags\no.png" />
+    <Content Include="Content\plugins\icons\flags\flags\np.png" />
+    <Content Include="Content\plugins\icons\flags\flags\nr.png" />
+    <Content Include="Content\plugins\icons\flags\flags\nu.png" />
+    <Content Include="Content\plugins\icons\flags\flags\nz.png" />
+    <Content Include="Content\plugins\icons\flags\flags\om.png" />
+    <Content Include="Content\plugins\icons\flags\flags\pa.png" />
+    <Content Include="Content\plugins\icons\flags\flags\pe.png" />
+    <Content Include="Content\plugins\icons\flags\flags\pf.png" />
+    <Content Include="Content\plugins\icons\flags\flags\pg.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ph.png" />
+    <Content Include="Content\plugins\icons\flags\flags\pk.png" />
+    <Content Include="Content\plugins\icons\flags\flags\pl.png" />
+    <Content Include="Content\plugins\icons\flags\flags\pm.png" />
+    <Content Include="Content\plugins\icons\flags\flags\pn.png" />
+    <Content Include="Content\plugins\icons\flags\flags\pr.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ps.png" />
+    <Content Include="Content\plugins\icons\flags\flags\pt.png" />
+    <Content Include="Content\plugins\icons\flags\flags\pw.png" />
+    <Content Include="Content\plugins\icons\flags\flags\py.png" />
+    <Content Include="Content\plugins\icons\flags\flags\qa.png" />
+    <Content Include="Content\plugins\icons\flags\flags\re.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ro.png" />
+    <Content Include="Content\plugins\icons\flags\flags\rs.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ru.png" />
+    <Content Include="Content\plugins\icons\flags\flags\rw.png" />
+    <Content Include="Content\plugins\icons\flags\flags\sa.png" />
+    <Content Include="Content\plugins\icons\flags\flags\sb.png" />
+    <Content Include="Content\plugins\icons\flags\flags\sc.png" />
+    <Content Include="Content\plugins\icons\flags\flags\sd.png" />
+    <Content Include="Content\plugins\icons\flags\flags\se.png" />
+    <Content Include="Content\plugins\icons\flags\flags\sg.png" />
+    <Content Include="Content\plugins\icons\flags\flags\sh.png" />
+    <Content Include="Content\plugins\icons\flags\flags\si.png" />
+    <Content Include="Content\plugins\icons\flags\flags\sk.png" />
+    <Content Include="Content\plugins\icons\flags\flags\sl.png" />
+    <Content Include="Content\plugins\icons\flags\flags\sm.png" />
+    <Content Include="Content\plugins\icons\flags\flags\sn.png" />
+    <Content Include="Content\plugins\icons\flags\flags\so.png" />
+    <Content Include="Content\plugins\icons\flags\flags\sr.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ss.png" />
+    <Content Include="Content\plugins\icons\flags\flags\st.png" />
+    <Content Include="Content\plugins\icons\flags\flags\sv.png" />
+    <Content Include="Content\plugins\icons\flags\flags\sx.png" />
+    <Content Include="Content\plugins\icons\flags\flags\sy.png" />
+    <Content Include="Content\plugins\icons\flags\flags\sz.png" />
+    <Content Include="Content\plugins\icons\flags\flags\tc.png" />
+    <Content Include="Content\plugins\icons\flags\flags\td.png" />
+    <Content Include="Content\plugins\icons\flags\flags\tf.png" />
+    <Content Include="Content\plugins\icons\flags\flags\tg.png" />
+    <Content Include="Content\plugins\icons\flags\flags\th.png" />
+    <Content Include="Content\plugins\icons\flags\flags\tj.png" />
+    <Content Include="Content\plugins\icons\flags\flags\tk.png" />
+    <Content Include="Content\plugins\icons\flags\flags\tl.png" />
+    <Content Include="Content\plugins\icons\flags\flags\tm.png" />
+    <Content Include="Content\plugins\icons\flags\flags\tn.png" />
+    <Content Include="Content\plugins\icons\flags\flags\to.png" />
+    <Content Include="Content\plugins\icons\flags\flags\tr.png" />
+    <Content Include="Content\plugins\icons\flags\flags\tt.png" />
+    <Content Include="Content\plugins\icons\flags\flags\tv.png" />
+    <Content Include="Content\plugins\icons\flags\flags\tw.png" />
+    <Content Include="Content\plugins\icons\flags\flags\tz.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ua.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ug.png" />
+    <Content Include="Content\plugins\icons\flags\flags\um.png" />
+    <Content Include="Content\plugins\icons\flags\flags\us.png" />
+    <Content Include="Content\plugins\icons\flags\flags\uy.png" />
+    <Content Include="Content\plugins\icons\flags\flags\uz.png" />
+    <Content Include="Content\plugins\icons\flags\flags\va.png" />
+    <Content Include="Content\plugins\icons\flags\flags\vc.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ve.png" />
+    <Content Include="Content\plugins\icons\flags\flags\vg.png" />
+    <Content Include="Content\plugins\icons\flags\flags\vi.png" />
+    <Content Include="Content\plugins\icons\flags\flags\vn.png" />
+    <Content Include="Content\plugins\icons\flags\flags\vu.png" />
+    <Content Include="Content\plugins\icons\flags\flags\wf.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ws.png" />
+    <Content Include="Content\plugins\icons\flags\flags\ye.png" />
+    <Content Include="Content\plugins\icons\flags\flags\yt.png" />
+    <Content Include="Content\plugins\icons\flags\flags\za.png" />
+    <Content Include="Content\plugins\icons\flags\flags\zm.png" />
+    <Content Include="Content\plugins\icons\flags\flags\zw.png" />
+    <Content Include="Content\plugins\icons\ionic\ionicons.css" />
+    <Content Include="Content\plugins\icons\pe7\pe-icon-7.css" />
+    <Content Include="Content\plugins\icons\themify\themify.css" />
+    <Content Include="Content\plugins\icons\typicons\typicons.css" />
+    <Content Include="Content\plugins\icons\weather\weathericons.css" />
+    <Content Include="Content\plugins\ion-rangeslider\css\ion.rangeSlider.min.css" />
+    <Content Include="Content\plugins\ion-rangeslider\js\custom-rangeslider.js" />
+    <Content Include="Content\plugins\ion-rangeslider\js\ion.rangeSlider.min.js" />
+    <Content Include="Content\plugins\lightbox\glightbox.min.css" />
+    <Content Include="Content\plugins\lightbox\glightbox.min.js" />
+    <Content Include="Content\plugins\lightbox\lightbox.js" />
+    <Content Include="Content\plugins\material\materialdesignicons.css" />
+    <Content Include="Content\plugins\moment\moment.min.js" />
+    <Content Include="Content\plugins\morris\chart-data.js" />
+    <Content Include="Content\plugins\morris\morris.min.js" />
+    <Content Include="Content\plugins\morris\raphael-min.js" />
+    <Content Include="Content\plugins\owlcarousel\owl.carousel.min.css" />
+    <Content Include="Content\plugins\owlcarousel\owl.carousel.min.js" />
+    <Content Include="Content\plugins\owlcarousel\owl.theme.default.min.css" />
+    <Content Include="Content\plugins\owlcarousel\owl.video.play.png" />
+    <Content Include="Content\plugins\peity\chart-data.js" />
+    <Content Include="Content\plugins\peity\jquery.peity.min.js" />
+    <Content Include="Content\plugins\raty\custom.raty.js" />
+    <Content Include="Content\plugins\raty\jquery.raty.js" />
+    <Content Include="Content\plugins\scrollbar\custom-scroll.js" />
+    <Content Include="Content\plugins\scrollbar\scroll.min.css" />
+    <Content Include="Content\plugins\scrollbar\scrollbar.min.js" />
+    <Content Include="Content\plugins\select2\css\select2.min.css" />
+    <Content Include="Content\plugins\select2\js\custom-select.js" />
+    <Content Include="Content\plugins\select2\js\select2.min.js" />
+    <Content Include="Content\plugins\simpleline\simple-line-icons.css" />
+    <Content Include="Content\plugins\stickynote\sticky.css" />
+    <Content Include="Content\plugins\stickynote\sticky.js" />
+    <Content Include="Content\plugins\summernote\summernote-bs4.min.css" />
+    <Content Include="Content\plugins\summernote\summernote-bs4.min.js" />
+    <Content Include="Content\plugins\sweetalert\sweetalert2.all.min.js" />
+    <Content Include="Content\plugins\sweetalert\sweetalerts.min.js" />
+    <Content Include="Content\plugins\toastr\toastr.js" />
+    <Content Include="Content\plugins\toastr\toastr.min.js" />
+    <Content Include="Content\plugins\toastr\toatr.css" />
+    <Content Include="Content\plugins\twitter-bootstrap-wizard\form-wizard.css" />
+    <Content Include="Content\plugins\twitter-bootstrap-wizard\form-wizard.js" />
+    <Content Include="Content\plugins\twitter-bootstrap-wizard\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Content\plugins\twitter-bootstrap-wizard\prettify.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\plugins\fontawesome\webfonts\fa-brands-400-1.eot" />
+    <Content Include="Content\plugins\fontawesome\webfonts\fa-brands-400.eot" />
+    <Content Include="Content\plugins\fontawesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\plugins\fontawesome\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\plugins\fontawesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\plugins\fontawesome\webfonts\fa-regular-400-1.eot" />
+    <Content Include="Content\plugins\fontawesome\webfonts\fa-regular-400.eot" />
+    <Content Include="Content\plugins\fontawesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\plugins\fontawesome\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\plugins\fontawesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\plugins\fontawesome\webfonts\fa-solid-900-1.eot" />
+    <Content Include="Content\plugins\fontawesome\webfonts\fa-solid-900.eot" />
+    <Content Include="Content\plugins\fontawesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\plugins\fontawesome\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\plugins\fontawesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="Content\plugins\icons\feather\fonts\feather-webfont.woff" />
+    <Content Include="Content\plugins\icons\ionic\fonts\ionicons.ttf" />
+    <Content Include="Content\plugins\icons\pe7\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="Content\plugins\icons\themify\fonts\themify.woff" />
+    <Content Include="Content\plugins\icons\typicons\fonts\typicons.woff" />
+    <Content Include="Content\plugins\icons\weather\fonts\weathericons-regular-webfont.woff2" />
+    <Content Include="Content\plugins\material\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Content\plugins\material\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Content\plugins\simpleline\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="Content\plugins\summernote\font\summernote-1.eot" />
+    <Content Include="Content\plugins\summernote\font\summernote.eot" />
+    <Content Include="Content\plugins\summernote\font\summernote.ttf" />
+    <Content Include="Content\plugins\summernote\font\summernote.woff" />
+    <Content Include="Content\plugins\summernote\font\summernote.woff2" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\js\feather.min.js" />
+    <Content Include="Scripts\js\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\js\jquery-ui.min.js" />
+    <Content Include="Scripts\js\jquery.dataTables.min.js" />
+    <Content Include="Scripts\js\jquery.slimscroll.min.js" />
+    <Content Include="Scripts\js\moment.min.js" />
+    <Content Include="Scripts\js\script.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_header.cshtml" />
+    <Content Include="Views\Shared\_LayoutAuth.cshtml" />
+    <Content Include="Views\Shared\_SideNav.cshtml" />
+    <Content Include="Views\Products\AddBrand.cshtml" />
+    <Content Include="Views\Products\BrandList.cshtml" />
+    <Content Include="Views\Products\editbrand.cshtml" />
+    <Content Include="Views\Products\AddCategory.cshtml" />
+    <Content Include="Views\Products\CategoryList.cshtml" />
+    <Content Include="Views\Products\editcategory.cshtml" />
+    <Content Include="Views\Places\CountryList.cshtml" />
+    <Content Include="Views\Places\EditCountry.cshtml" />
+    <Content Include="Views\Places\NewCountry.cshtml" />
+    <Content Include="Views\Places\EditState.cshtml" />
+    <Content Include="Views\Places\NewState.cshtml" />
+    <Content Include="Views\Places\StateList.cshtml" />
+    <Content Include="Views\Peoples\AddCustomer.cshtml" />
+    <Content Include="Views\Peoples\AddSupplier.cshtml" />
+    <Content Include="Views\Peoples\CustomerList.cshtml" />
+    <Content Include="Views\Peoples\EditCustomer.cshtml" />
+    <Content Include="Views\Peoples\EditSupplier.cshtml" />
+    <Content Include="Views\Peoples\SupplierList.cshtml" />
+    <Content Include="Views\Expenses\AddExpense.cshtml" />
+    <Content Include="Views\Expenses\EditExpense.cshtml" />
+    <Content Include="Views\Expenses\ExpenseList.cshtml" />
+    <Content Include="Views\Products\AddUnit.cshtml" />
+    <Content Include="Views\Products\EditUnit.cshtml" />
+    <Content Include="Views\Products\UnitList.cshtml" />
+    <Content Include="Views\Products\AddProduct.cshtml" />
+    <Content Include="Views\Products\editproduct.cshtml" />
+    <Content Include="Views\Products\ProductList.cshtml" />
+    <Content Include="Views\Purchases\AddPurchase.cshtml" />
+    <Content Include="Views\Purchases\PurchaseDetails.cshtml" />
+    <Content Include="Views\Purchases\PurchaseList.cshtml" />
+    <Content Include="Views\Authentication\Forgotpswd.cshtml" />
+    <Content Include="Views\Authentication\login.cshtml" />
+    <Content Include="Views\Authentication\signup.cshtml" />
+    <Content Include="Views\DashBoard\Index.cshtml" />
+    <Content Include="Views\Reports\InventoryReport.cshtml" />
+    <Content Include="Views\Reports\SalesReport.cshtml" />
+    <Content Include="Views\Sales\NewSales.cshtml" />
+    <Content Include="Views\Sales\AddSales.cshtml" />
+    <Content Include="Views\Sales\SalesList.cshtml" />
+    <Content Include="Views\Sales\SalesDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Uploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202306081629400_Brand.resx">
+      <DependentUpon>202306081629400_Brand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306081802439_Country.resx">
+      <DependentUpon>202306081802439_Country.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306081818480_City.resx">
+      <DependentUpon>202306081818480_City.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306081830064_Customer.resx">
+      <DependentUpon>202306081830064_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306081845400_Supplier.resx">
+      <DependentUpon>202306081845400_Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306081900441_Supplier4.resx">
+      <DependentUpon>202306081900441_Supplier4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306081901285_Supplier5.resx">
+      <DependentUpon>202306081901285_Supplier5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306081932205_Expense.resx">
+      <DependentUpon>202306081932205_Expense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306081947341_Unit.resx">
+      <DependentUpon>202306081947341_Unit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306082024259_Purchase.resx">
+      <DependentUpon>202306082024259_Purchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306082137176_Customer1.resx">
+      <DependentUpon>202306082137176_Customer1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306082343503_Purchase1.resx">
+      <DependentUpon>202306082343503_Purchase1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306090016515_Purchase2.resx">
+      <DependentUpon>202306090016515_Purchase2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306131424355_InventoryReport1.resx">
+      <DependentUpon>202306131424355_InventoryReport1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306131430429_InventoryReport2.resx">
+      <DependentUpon>202306131430429_InventoryReport2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306131433212_InventoryReport3.resx">
+      <DependentUpon>202306131433212_InventoryReport3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306131441501_PurchaseReport.resx">
+      <DependentUpon>202306131441501_PurchaseReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306131447565_SaleReport.resx">
+      <DependentUpon>202306131447565_SaleReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306131450273_SaleReport1.resx">
+      <DependentUpon>202306131450273_SaleReport1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306131453018_SaleReport2.resx">
+      <DependentUpon>202306131453018_SaleReport2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306131454409_InventoryReport4.resx">
+      <DependentUpon>202306131454409_InventoryReport4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306141208363_salesUpdate.resx">
+      <DependentUpon>202306141208363_salesUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306141415322_salesUpdate1.resx">
+      <DependentUpon>202306141415322_salesUpdate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306141417157_salesUpdate2.resx">
+      <DependentUpon>202306141417157_salesUpdate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306142045128_unit added to sale.resx">
+      <DependentUpon>202306142045128_unit added to sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306142105212_finalsaleupdate.resx">
+      <DependentUpon>202306142105212_finalsaleupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306142157089_removeinventoryreportmodel.resx">
+      <DependentUpon>202306142157089_removeinventoryreportmodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306142216453_updateproduct.resx">
+      <DependentUpon>202306142216453_updateproduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306142251225_finalupdateproduct.resx">
+      <DependentUpon>202306142251225_finalupdateproduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306142310380_image added to product.resx">
+      <DependentUpon>202306142310380_image added to product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306151048288_Image removed.resx">
+      <DependentUpon>202306151048288_Image removed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306151053321_Image added to product model.resx">
+      <DependentUpon>202306151053321_Image added to product model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306191108462_Image added to category.resx">
+      <DependentUpon>202306191108462_Image added to category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306191130299_Imagepath added to category.resx">
+      <DependentUpon>202306191130299_Imagepath added to category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306191239599_productbrand.resx">
+      <DependentUpon>202306191239599_productbrand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306191412575_deletesale.resx">
+      <DependentUpon>202306191412575_deletesale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306201111390_Delete report.resx">
+      <DependentUpon>202306201111390_Delete report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306201158135_Sales Model.resx">
+      <DependentUpon>202306201158135_Sales Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306201912398_NewSales Model .resx">
+      <DependentUpon>202306201912398_NewSales Model .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306201915154_NewSales Model2 .resx">
+      <DependentUpon>202306201915154_NewSales Model2 .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306211209189_remove soldproduct.resx">
+      <DependentUpon>202306211209189_remove soldproduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306211425344_change sales2.resx">
+      <DependentUpon>202306211425344_change sales2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306212223002_remove quantity.resx">
+      <DependentUpon>202306212223002_remove quantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306212310114_remove quantity1.resx">
+      <DependentUpon>202306212310114_remove quantity1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306212351503_add quantity.resx">
+      <DependentUpon>202306212351503_add quantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306220929504_Productupdate.resx">
+      <DependentUpon>202306220929504_Productupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306220934052_PurchaseReport1.resx">
+      <DependentUpon>202306220934052_PurchaseReport1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306220957277_remove PurchaseReport.resx">
+      <DependentUpon>202306220957277_remove PurchaseReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306221008272_InventoryReports.resx">
+      <DependentUpon>202306221008272_InventoryReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306221041542_remove InventoryReports.resx">
+      <DependentUpon>202306221041542_remove InventoryReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306221051199_Productupdate2.resx">
+      <DependentUpon>202306221051199_Productupdate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306261019598_updatesale.resx">
+      <DependentUpon>202306261019598_updatesale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307131544324_sale-updated.resx">
+      <DependentUpon>202307131544324_sale-updated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307140710081_remove quantity from selected products.resx">
+      <DependentUpon>202307140710081_remove quantity from selected products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307140711437_remove pickeditems from selected products.resx">
+      <DependentUpon>202307140711437_remove pickeditems from selected products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307140848264_Change Sales.resx">
+      <DependentUpon>202307140848264_Change Sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307141111308_remove purchased quantity from product.resx">
+      <DependentUpon>202307141111308_remove purchased quantity from product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307141121533_Product Report Model.resx">
+      <DependentUpon>202307141121533_Product Report Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307141224173_Product Report Model update.resx">
+      <DependentUpon>202307141224173_Product Report Model update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307141311093_update soldproducts.resx">
+      <DependentUpon>202307141311093_update soldproducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307141313018_remove error from soldproducts.resx">
+      <DependentUpon>202307141313018_remove error from soldproducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307141335463_add stock to soldproducts.resx">
+      <DependentUpon>202307141335463_add stock to soldproducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307141635020_register.resx">
+      <DependentUpon>202307141635020_register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307141637572_login.resx">
+      <DependentUpon>202307141637572_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307141734166_Add date to login.resx">
+      <DependentUpon>202307141734166_Add date to login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307141828227_Add createdby.resx">
+      <DependentUpon>202307141828227_Add createdby.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307171456059_change amount in expense from int to decimal.resx">
+      <DependentUpon>202307171456059_change amount in expense from int to decimal.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56462</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44311/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

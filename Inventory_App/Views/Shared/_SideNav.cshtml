@@ -1,0 +1,120 @@
+﻿
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+                <li class="active">
+                    <a href="@Url.Action("Index","DashBoard")">
+                        <img src="~/Content/icons/dashboard.svg" alt="img"><span>
+                            Dashboard
+                        </span>
+                    </a>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0);">
+                        <img src="~/Content/icons/product.svg" alt="img"><span>
+                            Product
+                        </span> <span class="menu-arrow"></span>
+                    </a>
+                    <ul>
+                        <li><a href="@Url.Action("ProductList","Products")">Product List</a></li>
+                        <li><a href="@Url.Action("CategoryList","Products")">Category List</a></li>
+
+                        <li><a href="@Url.Action("BrandList","Products")">Brand List</a></li>
+                        <li><a href="@Url.Action("UnitList","Products")">Unit List</a></li>
+
+
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0);">
+                        <img src="~/Content/icons/sales1.svg" alt="img"><span>
+                            Sales
+                        </span> <span class="menu-arrow"></span>
+                    </a>
+                    <ul>
+                        <li><a href="@Url.Action("SalesList","Sales")">Sales List</a></li>
+
+
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0);">
+                        <img src="~/Content/icons/purchase1.svg" alt="img"><span>
+                            Purchase
+                        </span> <span class="menu-arrow"></span>
+                    </a>
+                    <ul>
+                        <li><a href="@Url.Action("PurchaseList","Purchases")">Purchase List</a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0);">
+                        <img src="~/Content/icons/expense1.svg" alt="img"><span>
+                            Expense
+                        </span> <span class="menu-arrow"></span>
+                    </a>
+                    <ul>
+                        <li><a href="@Url.Action("ExpenseList","Expenses")">Expense List</a></li>
+                    </ul>
+                </li>
+
+
+
+                <li class="submenu">
+                    <a href="javascript:void(0);">
+                        <img src="~/Content/icons/users1.svg" alt="img"><span>
+                            People
+                        </span> <span class="menu-arrow"></span>
+                    </a>
+                    <ul>
+                        <li><a href="@Url.Action("CustomerList","Peoples")">Customer List</a></li>
+                        <li><a href="@Url.Action("SupplierList","Peoples")">Supplier List</a></li>
+
+
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0);">
+                        <img src="~/Content/icons/places.svg" alt="img"><span>
+                            Places
+                        </span> <span class="menu-arrow"></span>
+                    </a>
+                    <ul>
+                        <li><a href="@Url.Action("CountryList","Places")">Countries list</a></li>
+                        <li><a href="@Url.Action("StateList","Places")">City list</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="submenu">
+                    <a href="javascript:void(0);">
+                        <img src="~/Content/icons/time.svg" alt="img"><span>
+                            Report
+                        </span> <span class="menu-arrow"></span>
+                    </a>
+                    <ul>
+                        <li><a href="@Url.Action("InventoryReport","Reports")">Inventory Report</a></li>
+                        <li><a href="@Url.Action("SalesReport","Reports")">Sales Report</a></li>
+                    </ul>
+                </li>
+
+               
+
+
+                <li >
+                    <a href="@Url.Action("Logout","Authentication")">
+                        <img src="~/Content/icons/log-out.svg" alt="img"><span>
+                              Logout
+                        </span> <span class="menu-arrow"></span>
+                    </a>
+                    
+                </li>
+
+                
+
+            </ul>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,61 @@
+﻿@model Inventory_App.Resources.CategoryResource
+
+@{
+    ViewBag.Title = "AddCategory";
+}
+
+
+
+@using (Html.BeginForm("AddCategory", "Products", FormMethod.Post, new {enctype="multipart/form-data"}))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="page-header">
+        <div class="page-title">
+            <h4>Add Category</h4>
+            <h6>Create new product Category</h6>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label>Category Name</label>
+                        @Html.EditorFor(model => model.Name)
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <div style="display:flex">
+
+                            <label>Category Image</label>
+                        </div>
+                        <div class="image-upload">
+                            @Html.TextBoxFor(m => m.Image, new { type = "file" })
+
+                            <div class="image-uploads">
+                                <img src="~/Content/icons/upload.svg" alt="img">
+                                <h4>Drag and drop a file to upload</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <input type="submit" value="Submit" class="btn btn-submit me-2">
+                    <a href="@Url.Action("CategoryList", "Products")" class="btn btn-cancel">Cancel</a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

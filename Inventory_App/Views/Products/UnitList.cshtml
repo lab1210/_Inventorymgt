@@ -1,0 +1,99 @@
+﻿@model  IEnumerable<Inventory_App.Models.Unit>
+
+@{
+    ViewBag.Title = "UnitList";
+}
+
+<div class="page-header">
+    <div class="page-title">
+        <h4>Unit List</h4>
+        <h6>Manage your Units</h6>
+    </div>
+    <div class="page-btn">
+        <a href="@Url.Action("AddUnit","Products")" class="btn btn-added"><img src="~/Content/icons/plus.svg" class="me-2" alt="img">Add Unit</a>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="table-top">
+
+            <div class="wordset">
+                <ul>
+                    <li>
+                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf"><img src="~/Content/icons/pdf.svg" alt="img"></a>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img src="~/Content/icons/excel.svg" alt="img"></a>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="print"><img src="~/Content/icons/printer.svg" alt="img"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="table-responsive">
+            <table class="table datanew ">
+                <thead>
+                    <tr>
+                        <th>
+                            <label class="checkboxs">
+                                <input type="checkbox" id="select-all">
+                                <span class="checkmarks"></span>
+                            </label>
+                        </th>
+                        <th>Unit Name</th>
+                        <th>Created By</th>
+
+                        <th></th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td>
+                                <label class="checkboxs">
+                                    <input type="checkbox">
+                                    <span class="checkmarks"></span>
+                                </label>
+                            </td>
+
+                            <td> @Html.DisplayFor(modelitem => item.Name)</td>
+                            @if (item.Name == "None")
+                            {
+                                <td></td>
+                                <td></td>
+                                <td></td>
+
+                            }
+                            else
+                            {
+                                <td>@Html.DisplayFor(modelitem => item.CreatedBy)</td>
+
+                                <td>
+                                    <a class="me-3" href="@Url.Action("EditUnit", "Products", new { ID = item.Id })">
+                                        <img src="~/Content/icons/edit.svg" alt="img">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a class="me-3" href="@Url.Action("DeleteUnit", "Products", new { ID = item.Id })" onclick="return confirm('Are you sure you want to delete this Unit?');">
+                                        <img src="~/Content/icons/delete.svg" alt="img">
+                                    </a>
+                                </td>
+                            }
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

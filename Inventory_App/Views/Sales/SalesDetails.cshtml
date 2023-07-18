@@ -1,0 +1,58 @@
+﻿@model Inventory_App.Resources.SalesResource
+
+@{
+    ViewBag.Title = "SalesDetails";
+}
+
+
+<div class="page-header">
+    <div class="page-title">
+        <h4>Sale Details</h4>
+        <h6>Full details of a Sale</h6>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 col-sm-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="productdetails">
+                       
+                        <ul class="product-bar">
+                    @for (int i = 0; i < Model.SoldProductResources.Count; i++)
+                    {
+                            <li>
+                                <h4>Product</h4>
+
+                                <h6>
+                                    <img src=@Model.SoldProductResources[i].Image alt="Image" style="max-height:100px;max-width:100px" />
+                                    @Html.DisplayFor(model => Model.SoldProductResources[i].Name)
+                                </h6>
+
+                            </li>
+
+                            <li>
+                                <h4>Quantity</h4>
+                                <h6>@Html.DisplayFor(model => Model.SoldProductResources[i].Quantity)</h6>
+                            </li>
+
+
+                    }
+                            <li>
+                                <h4>Total</h4>
+                                <h6>@Html.DisplayFor(model => Model.Total) </h6>
+                            </li>
+
+
+                        </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

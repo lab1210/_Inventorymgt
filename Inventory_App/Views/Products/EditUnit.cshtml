@@ -1,0 +1,40 @@
+﻿@model  Inventory_App.Models.Unit
+
+@{
+    ViewBag.Title = "EditUnit";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken();
+    <div class="page-header">
+        <div class="page-title">
+            <h4>Unit Edit</h4>
+            <h6>Update your Unit</h6>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label>Unit Name</label>
+                        @Html.EditorFor(model => model.Name)
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="col-lg-12">
+                    <input type="submit" value="Update" class="btn btn-submit me-2" />
+                    <a href="@Url.Action("UnitList", "Products")" class="btn btn-cancel">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

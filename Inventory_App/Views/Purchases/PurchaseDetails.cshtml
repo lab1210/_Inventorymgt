@@ -1,0 +1,53 @@
+﻿@model Inventory_App.Resources.PurchaseResources
+
+@{
+    ViewBag.Title = "PurchaseDetails";
+}
+
+
+<div class="page-header">
+    <div class="page-title">
+        <h4>Purchase Details</h4>
+        <h6>Full details of a Purchase</h6>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 col-sm-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="productdetails">
+                    @for (int i = 0; i < Model.purchaseResourceProducts.Count; i++)
+                    {
+                        <ul class="product-bar">
+                            <li>
+                                <h4>Product</h4>
+                                <h6> @Html.DisplayFor(model => Model.purchaseResourceProducts[i].Name)</h6>
+
+                            </li>
+
+                            <li>
+                                <h4>Quantity</h4>
+                                <h6>@Html.DisplayFor(model => Model.purchaseResourceProducts[i].Quantity)</h6>
+                            </li>
+
+
+                            <li>
+                                <h4>Price</h4>
+                                <h6>@Html.DisplayFor(model => Model.Total) </h6>
+                            </li>
+
+
+                        </ul>
+                    }
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
